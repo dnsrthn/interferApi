@@ -7,7 +7,7 @@ import { dbConnection } from "./mongo.js"
 import authRoutes from "../src/auth/auth.routes.js"
 import userRoutes from "../src/user/user.routes.js"
 import apiLimiter from "../src/middlewares/rate-limit-validator.js"
-import {createDefaultAdmin} from "./default-data.js"
+import {createDefaultAdmin} from "./default.js"
 
 
 const middlewares = (app) => {
