@@ -1,0 +1,154 @@
+[{
+  "_id": {
+    "$oid": "67c1d4d81aac7de376e21a63"
+  },
+  "name": "Admin",
+  "username": "administrator1",
+  "email": "admin@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$vcuBpr2d6G5bt59HWmfAFQ$fV4BoS0uU+KT+HI8eX/27Oq6pZmRHCH0ii83w1irckA",
+  "role": "ADMIN",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c298cd71f7ea711de4906d"
+  },
+  "name": "Jason Medler",
+  "username": "jMedler1",
+  "email": "json@com.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$o1Qh8s24qA6/yvURgrfXLw$03wd4xN7iK5TU9qMJ0esRuFqoj/jvBv/c75jaQ/Ptrc",
+  "role": "USER",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c2999371f7ea711de49073"
+  },
+  "name": "Justin Medler",
+  "username": "jMedler2",
+  "email": "jsonen@com.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$SUriBSPXrk0bP8nIwpjamw$L8/wtSC10eFE8zD91vYouJtXJX7qlAoxtGqbsyZu6/A",
+  "role": "ADMIN",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c29ec20528bb02e7e07f30"
+  },
+  "name": "Ethan Juarez",
+  "username": "dnsrthn",
+  "email": "eth@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$1Xv6CZhDHt+lQZGK8o1NlA$VxCUQL8752u9Ay3PaXr74Rup6NEqmUWDWrCK9lA1bBk",
+  "role": "ADMIN",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c29ed70528bb02e7e07f37"
+  },
+  "name": "Ethan Juarez",
+  "username": "amalnivlo",
+  "email": "esth@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$ZJFqpVvU1XyLtnlHaflMPg$y5tDNbXFDYT6acCThc1Qs/zXSackIUlXkoA6jIFy0bA",
+  "role": "USER",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c29efb0528bb02e7e07f3c"
+  },
+  "name": "San Braulio",
+  "username": "santitobrau",
+  "email": "brau@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$OK5GMMa4YwS4rflLliU0Zg$1sPpNcGm97AIRu5WwuNFanI52uCxlx1RpIgSHd3fz8Y",
+  "role": "ADMIN",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c29f0f0528bb02e7e07f41"
+  },
+  "name": " Braulio Echeverria",
+  "username": "braulioeche",
+  "email": "brauEche@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$pi77DkyFFmG0dtCmHq9wTg$k+dStpXLWRAxnIHw1As8VpFdhpOZ6uwvV8z5cfImVmA",
+  "role": "ADMIN",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c29f1a0528bb02e7e07f46"
+  },
+  "name": " Jose Echeverria",
+  "username": "jseeche",
+  "email": "echejo@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$MrqNp+K3B0NQJ0MUfWwuzA$qhxDbQr/3SuXEkfkC764uCKAcIeCmGCj4Z5GY0jFqfA",
+  "role": "ADMIN",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c29f2a0528bb02e7e07f4d"
+  },
+  "name": " Jose Echeverria",
+  "username": "josedco9",
+  "email": "echejaso@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$hThH/NcakQ3qFFASfMWtjg$eP6sEACNrnzYTrNJkTP/J/XZ64oyb5TVFPgl0p/c/Lc",
+  "role": "ADMIN",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c29faf0528bb02e7e07f52"
+  },
+  "name": "María González",
+  "username": "maria_gon",
+  "email": "maria.g@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$d8Dz0tUQatxfmbqICaHM2g$jsna91fkYf44nyigNW8KrqGxsG4+WmwcOCzd2TahMsc",
+  "role": "USER",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c29fd70528bb02e7e07f57"
+  },
+  "name": "Francisco Molina",
+  "username": "fran_molina",
+  "email": "fran.m@live.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$GDeRoprix86zxXiyWfh0Gw$Y/7oZDTENF+f8drMcaSvOwOuJhtnAmLSwd5PuGMmZ24",
+  "role": "ADMIN",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c29fe00528bb02e7e07f5c"
+  },
+  "name": "Teresa Aguilar",
+  "username": "teresa_a",
+  "email": "teresa.aguilar@yahoo.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$3MgMmMa9IMpQpX0prWHzyQ$+4eg29B3d9it/kmps+VtuhJLFlJ8/fL69ypMB2viJF0",
+  "role": "USER",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c29fe60528bb02e7e07f61"
+  },
+  "name": "Ricardo Chávez",
+  "username": "ricardo_ch",
+  "email": "richavez@outlook.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$XqcR+7J819rhM5+mUN8zaw$PcNsRo/quXfY8/yacpd7G02yFjBOqSu/wdeSBkYlMyA",
+  "role": "ADMIN",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c29fed0528bb02e7e07f66"
+  },
+  "name": "Renata Pérez",
+  "username": "renata_p",
+  "email": "renata.p@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$TnMHDt8+hbXRWd4iRPFy7A$fvb/27enO4GGKZfrG0/X8XVMajanrHHU7CPxrmF+osA",
+  "role": "ADMIN",
+  "status": true
+}]
