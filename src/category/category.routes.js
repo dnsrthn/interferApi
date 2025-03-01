@@ -6,9 +6,11 @@ import swaggerUi from "swagger-ui-express"
 
 const router = Router()
 
+
+router.post("/addCategory", addCategoryValidator, addCategory)
 /**
  * @swagger
- * /addcategory:
+ * /addCategory:
  *   post:
  *     summary: Add a new category
  *     tags: [Category]
@@ -21,17 +23,18 @@ const router = Router()
  *             properties:
  *               name:
  *                 type: string
- *                 example: "New Category"
+ *                 description: The name of the category
+ *                 example: Electronics
  *     responses:
  *       200:
  *         description: Category added successfully
  *       400:
  *         description: Invalid input
  */
-
+router.put("/updtCategory/:cid", updateCategoryValidator, updateCategory)
 /**
  * @swagger
- * /updtcategory/{cid}:
+ * /updtCategory/{cid}:
  *   put:
  *     summary: Update an existing category
  *     tags: [Category]
@@ -41,7 +44,7 @@ const router = Router()
  *         schema:
  *           type: string
  *         required: true
- *         description: Category ID
+ *         description: The category ID
  *     requestBody:
  *       required: true
  *       content:
@@ -51,7 +54,8 @@ const router = Router()
  *             properties:
  *               name:
  *                 type: string
- *                 example: "Updated Category"
+ *                 description: The new name of the category
+ *                 example: Gadgets
  *     responses:
  *       200:
  *         description: Category updated successfully
@@ -61,9 +65,10 @@ const router = Router()
  *         description: Category not found
  */
 
+router.delete("/deleteCategory/:cid", deleteCategoryValidator, deleteCategory)
 /**
  * @swagger
- * /deletecategory/{cid}:
+ * /deleteCategory/{cid}:
  *   delete:
  *     summary: Delete a category
  *     tags: [Category]
@@ -73,15 +78,13 @@ const router = Router()
  *         schema:
  *           type: string
  *         required: true
- *         description: Category ID
+ *         description: The category ID
  *     responses:
  *       200:
  *         description: Category deleted successfully
+ *       400:
+ *         description: Invalid input
  *       404:
  *         description: Category not found
  */
-router.post("/addcategory", addCategoryValidator, addCategory)
-router.put("/updtcategory/:cid", updateCategoryValidator, updateCategory)
-router.delete("/deletecategory/:cid", deleteCategoryValidator, deleteCategory)
-
 export default router

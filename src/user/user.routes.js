@@ -1,7 +1,10 @@
 import express from 'express'
 import { updateUser, updatePassword, deleteUser, updateAdmin, deleteAdmin } from './user.controller.js'
-import {  updatePasswordValidator, updateUserValidator, deleteUserValidator  } from "../middlewares/user-validator.js"
-import router from '../auth/auth.routes.js'
+import { updateUserValidator, updatePasswordValidator, deleteUserValidator } from '../middlewares/user-validator.js'
+
+const router = express.Router()
+
+router.patch('/updatePassword', updatePasswordValidator, updatePassword)
 /**
  * @swagger
  * /updatePassword:
@@ -23,11 +26,16 @@ import router from '../auth/auth.routes.js'
  *       200:
  *         description: Password updated successfully
  *       400:
- *         description: Invalid request
- * 
- * /updatedAdmin:
+ *         description: Invalid input
+ *       500:
+ *         description: Internal server error
+ */
+router.put('/updatedAdministrator', updateUserValidator, updateAdmin)
+/**
+ * @swagger
+ * /updatedAdministrator:
  *   put:
- *     summary: Update admin details
+ *     summary: Update administrator details
  *     tags: [Admin]
  *     requestBody:
  *       required: true
@@ -42,10 +50,15 @@ import router from '../auth/auth.routes.js'
  *                 type: string
  *     responses:
  *       200:
- *         description: Admin updated successfully
+ *         description: Administrator updated successfully
  *       400:
- *         description: Invalid request
- * 
+ *         description: Invalid input
+ *       500:
+ *         description: Internal server error
+ */
+router.put('/updateUser/:uid', updateUserValidator, updateUser)
+/**
+ * @swagger
  * /updateUser/{uid}:
  *   put:
  *     summary: Update user details
@@ -72,18 +85,37 @@ import router from '../auth/auth.routes.js'
  *       200:
  *         description: User updated successfully
  *       400:
- *         description: Invalid request
- * 
- * /deleteAdmin:
+ *         description: Invalid input
+ *       500:
+ *         description: Internal server error
+ */
+router.delete('/deleteAdministrator', deleteUserValidator, deleteAdmin )
+/**
+ * @swagger
+ * /deleteAdministrator:
  *   delete:
- *     summary: Delete admin
+ *     summary: Delete administrator
  *     tags: [Admin]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               adminId:
+ *                 type: string
  *     responses:
  *       200:
- *         description: Admin deleted successfully
+ *         description: Administrator deleted successfully
  *       400:
- *         description: Invalid request
- * 
+ *         description: Invalid input
+ *       500:
+ *         description: Internal server error
+ */
+router.delete('/deleteUser/:uid',deleteUserValidator, deleteUser)
+/**
+ * @swagger
  * /deleteUser/{uid}:
  *   delete:
  *     summary: Delete user
@@ -99,12 +131,9 @@ import router from '../auth/auth.routes.js'
  *       200:
  *         description: User deleted successfully
  *       400:
- *         description: Invalid request
+ *         description: Invalid input
+ *       500:
+ *         description: Internal server error
  */
-router.patch('/updatePassword', updatePasswordValidator, updatePassword)
-router.put('/updatedAdmin', updateUserValidator, updateAdmin)
-router.put('/updateUser/:uid', updateUserValidator, updateUser)
-router.delete('/deleteAdmin', deleteUserValidator, deleteAdmin )
-router.delete('/deleteUser/:uid',deleteUserValidator, deleteUser)
 
 export default router

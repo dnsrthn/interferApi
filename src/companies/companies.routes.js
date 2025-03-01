@@ -4,25 +4,43 @@ import { addCompany, generateReports, updateCompany } from "./companies.controll
 import { createCompanyValidator, updateCompanyValidator } from "../middlewares/company-validator.js";
 
 const router = express.Router();
+
+router.post("/addCompany", createCompanyValidator, addCompany)
 /**
  * @swagger
- * /registerCompany:
+ * /addCompany:
  *   post:
- *     summary: Register a new company
+ *     summary: Add a new company
  *     tags: [Companies]
  *     requestBody:
  *       required: true
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/Company'
+ *             type: object
+ *             properties:
+ *               name:
+ *                 type: string
+ *                 description: The name of the company
+ *                 example: "Example Company"
+ *               address:
+ *                 type: string
+ *                 description: The address of the company
+ *                 example: "123 Example Street"
+ *               phone:
+ *                 type: string
+ *                 description: The phone number of the company
+ *                 example: "123-456-7890"
  *     responses:
  *       200:
- *         description: Company registered successfully
+ *         description: Company added successfully
  *       400:
- *         description: Bad request
- * 
- * /updateCompany:
+ *         description: Invalid input
+ */
+router.put("/updateCmpany", updateCompanyValidator, updateCompany)
+/**
+ * @swagger
+ * /updateCmpany:
  *   put:
  *     summary: Update an existing company
  *     tags: [Companies]
@@ -31,25 +49,41 @@ const router = express.Router();
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/Company'
+ *             type: object
+ *             properties:
+ *               id:
+ *                 type: string
+ *                 description: The ID of the company
+ *                 example: "12345"
+ *               name:
+ *                 type: string
+ *                 description: The name of the company
+ *                 example: "Updated Company"
+ *               address:
+ *                 type: string
+ *                 description: The address of the company
+ *                 example: "456 Updated Street"
+ *               phone:
+ *                 type: string
+ *                 description: The phone number of the company
+ *                 example: "987-654-3210"
  *     responses:
  *       200:
  *         description: Company updated successfully
  *       400:
- *         description: Bad request
- * 
- * /report:
+ *         description: Invalid input
+ */
+router.post("/createReports", generateReports)
+/**
+ * @swagger
+ * /createReports:
  *   post:
- *     summary: Generate a report of companies
+ *     summary: Generate reports for companies
  *     tags: [Companies]
  *     responses:
  *       200:
- *         description: Report generated successfully
+ *         description: Reports generated successfully
  *       400:
- *         description: Bad request
+ *         description: Error generating reports
  */
-router.post("/registerCompany", createCompanyValidator, addCompany)
-router.put("/updateCompany", updateCompanyValidator, updateCompany)
-router.post("/report", generateReports)
-
 export default router;
