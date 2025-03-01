@@ -4,7 +4,6 @@ export const addCategory = async (req, res) => {
     try {
         const data=req.body
         const category = await Category.create(data)
-
         return res.status(201).json({
             success: true, message: "Category was created successfully", category
         })
@@ -36,7 +35,7 @@ export const updateCategory = async (req, res) => {
 export const deleteCategory = async (req, res) => {
     try {
         const { cid } = req.params;
-        
+
         const category = await Category.findByIdAndUpdate(cid, { status: false }, { new: true })
 
         return res.status(200).json({

@@ -7,7 +7,7 @@ import { dbConnection } from "./mongo.js"
 import authRoutes from "../src/auth/auth.routes.js"
 import userRoutes from "../src/user/user.routes.js"
 import apiLimiter from "../src/middlewares/rate-limit-validator.js"
-import {createDefaultAdmin} from "./default.js"
+import {defaultAdmin, defaultCategory} from "./default.js"
 
 
 const middlewares = (app) => {
@@ -23,13 +23,16 @@ const routes = (app) =>{
     app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs))
     app.use("/interferA/v1/auth", authRoutes)
     app.use("/interferA/v1/user", userRoutes)
+    app.use("/interferA/v1/company", companyRoutes)
+    app.use("/interferA/v1/category", categoryRoutes)
     
 }
 
 const ConnectDB = async () =>{
     try{
         await dbConnection()
-        await createDefaultAdmin()
+        await defaultAdmin()
+        await defaultCategory()
     }catch(err){
         console.log(`Database connecetion has failed ${err}`)
         process.exit(1)
